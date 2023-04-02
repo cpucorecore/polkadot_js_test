@@ -29,10 +29,28 @@ const subAliceBalance = async (api: ApiPromise) => {
         console.log('alice new balance:', aliceAcc.data.free.toHuman())
     })
 }
+
+const subPoeEvent = async (api:ApiPromise) => {
+    await api.query.system.events((events: any[]) => {
+        events.forEach((record: any)=> {
+            const { event, phase } = record;
+            const types = event.typeDef;
+
+            const eventName = `${event.section}:${
+                event.method
+            }:: (phase=${phase.toString()})`;
+
+            if(eventName.includes('poeModule')) {
+                console.log(eventName)
+            }
+        })
+    })
+}
 const main = async () => {
     const api = await cli();
 
     await subAliceBalance(api);
+    await subPoeEvent(api);
 
     await transfer(api)
 

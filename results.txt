@@ -1,0 +1,13 @@
+➜  polkadot_js_test git:(main) ✗ ts-node main.ts 
+connect to substrate success
+alice new balance: 1,144,921,498,099,544,975
+finish
+Tx status:, Ready
+alice new balance: 1,144,921,497,846,385,833
+Tx status:, {"inBlock":"0x81de1731fdf440d3c969006bf76b3f81f723e8bca8f07481c2be439dae85feb0"}
+Tx status:, {"finalized":"0x81de1731fdf440d3c969006bf76b3f81f723e8bca8f07481c2be439dae85feb0"}
+poeModule:ClaimCreated:: (phase={"applyExtrinsic":1})
+alice new balance: 1,144,921,497,760,087,724
+poeModule:ClaimCreated:: (phase={"applyExtrinsic":1})
+alice new balance: 1,144,921,497,673,789,615
+
